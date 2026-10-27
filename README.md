@@ -4,9 +4,9 @@ A weather app built with HTML, CSS, and JavaScript. Search for any city, or let 
  
 **🔗 Live demo:** https://weather-app-1pdq-git-main-syed-ahsan-s-projects.vercel.app
  
-![Weather App - Haze in Karachi](Karachi weather.png)
-![Weather App - Overcast clouds in Chicago](chicago weather.png)
-![Weather App - Error when the city name is mispelled or not existed](city error.png)
+![Weather App - Haze in Karachi](https://github.com/syedAhsan382/Weather-app/blob/77bb02fe4baee0a4ca93f01d7b02fa5bf2424462/Karachi%20weather.png)
+![Weather App - Overcast clouds in Chicago](https://github.com/syedAhsan382/Weather-app/blob/77bb02fe4baee0a4ca93f01d7b02fa5bf2424462/chicago%20weather.png)
+![Weather App - Error when the city name is mispelled or not existed](https://github.com/syedAhsan382/Weather-app/blob/77bb02fe4baee0a4ca93f01d7b02fa5bf2424462/city%20error.png)
 
  
 ## ✨ Features
