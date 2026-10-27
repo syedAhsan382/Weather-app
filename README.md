@@ -108,6 +108,5 @@ For the location button, the browser asks the user for permission first. If they
 Software Engineer, Front-end Web Development
  
 - GitHub: https://github.com/syedAhsan382/Weather-app
-- LinkedIn: https://weather-app-1pdq-git-main-syed-ahsan-s-projects.vercel.app
-
+- LinkedIn:https://www.linkedin.com/in/syed-muhammad-ahsan-263ab8351/ 
 Feedback and suggestions are welcome! 😊
