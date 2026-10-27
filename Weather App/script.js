@@ -1,4 +1,4 @@
-// 1. Made weatherType matching case-insensitive for safety
+// Made weatherType matching case-insensitive for safety
 function getBackground(weatherType) {
   const type = weatherType.toLowerCase();
   
@@ -13,8 +13,7 @@ function getBackground(weatherType) {
 }
 
 
-// ... (Keep your getBackground function exactly the same) ...
-
+// GetWeather function fetch weather using API key
 async function getWeather() {
   const city = document.getElementById("cityInput").value.trim();
   const result = document.getElementById("weatherResult");
@@ -28,25 +27,26 @@ async function getWeather() {
   result.textContent = "Loading...";
   result.style.color = "black";
 
-  // 🔥 CHANGE 1: Point to YOUR backend proxy, no API key needed here!
+  // Backend proxy, no API key needed here!
   const url = `/api/weather?city=${encodeURIComponent(city)}`;
 
   try {
     const response = await fetch(url);
     const data = await response.json();
 
-    // 🔥 CHANGE 2: Handle errors returned by our proxy
+    // Handle errors returned by our proxy
     if (!response.ok) {
       throw new Error(data.error || "City not found");
     }
 
-    // ... (Keep all your data extraction and innerHTML logic EXACTLY the same) ...
+    // Data Extraction and innerHTML logic
     const temp = Math.round(data.main.temp);
     const description = data.weather[0].description;
     const weatherType = data.weather[0].main;
     const icon = data.weather[0].icon;
     const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
+    // This fetches the background Images according to weatherType
     const image = getBackground(weatherType);
     document.body.style.background = `url('${image}') center/cover no-repeat`;
 
@@ -63,6 +63,7 @@ async function getWeather() {
   }
 }
 
+// Function gets the location of the user device to get its current location
 function getLocationWeather() {
   const result = document.getElementById("weatherResult");
   
@@ -80,7 +81,7 @@ function getLocationWeather() {
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
       
-      // 🔥 CHANGE 3: Point to YOUR backend proxy with coordinates
+      // Point to backend proxy with coordinates
       const url = `/api/weather?lat=${lat}&lon=${lon}`;
       
       try {
@@ -93,12 +94,13 @@ function getLocationWeather() {
         
         document.getElementById("cityInput").value = data.name; 
         
-        // ... (Keep all your display logic EXACTLY the same) ...
-        const temp = Math.round(data.main.temp);
-        const description = data.weather[0].description;
-        const weatherType = data.weather[0].main;
-        const icon = data.weather[0].icon;
-        const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+        // Display logic 
+        const temp = Math.round(data.main.temp); //Temperature
+        const description = data.weather[0].description; // Description
+        const weatherType = data.weather[0].main; // Weather Type 
+        const icon = data.weather[0].icon; // Weather Icon
+        const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`; // Icon fetching from OpenWeather website
+
 
         const image = getBackground(weatherType);
         document.body.style.background = `url('${image}') center/cover no-repeat`;
@@ -107,8 +109,8 @@ function getLocationWeather() {
           <h2>${data.name}, ${data.sys.country}</h2>
           <img src="${iconUrl}" alt="${description}">
           <p><strong>${temp}°C</strong></p>
-          <p style="text-transform: capitalize;">${description}</p>
-        `;
+          <p style="text-transform: capitalize;">${description}</p>`;
+
       } catch (error) {
         result.textContent = error.message;
         result.style.color = "red";
