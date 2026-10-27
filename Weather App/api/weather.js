@@ -1,16 +1,16 @@
-// api/weather.js
+
 export default async function handler(request, response) {
-  // 1. Get the city or coordinates from the frontend request
+  // Get the city or coordinates from the frontend request
   const { city, lat, lon } = request.query;
   
-  // 2. Get the secret key from Vercel's Environment Variables
+  // API key 
   const apiKey = process.env.OPENWEATHER_API_KEY;
 
   if (!apiKey) {
     return response.status(500).json({ error: 'Server misconfiguration: API key missing.' });
   }
 
-  // 3. Determine which OpenWeatherMap URL to call
+  // OpenWeatherMap URL to call
   let apiUrl;
   if (city) {
     apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -21,7 +21,7 @@ export default async function handler(request, response) {
   }
 
   try {
-    // 4. Fetch data from OpenWeatherMap
+    // Fetching data from OpenWeatherMap
     const apiResponse = await fetch(apiUrl);
     
     if (!apiResponse.ok) {
@@ -30,7 +30,7 @@ export default async function handler(request, response) {
     
     const data = await apiResponse.json();
     
-    // 5. Send the data back to your frontend
+    // Send the data back to frontend
     return response.status(200).json(data);
     
   } catch (error) {
