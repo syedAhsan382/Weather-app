@@ -3,9 +3,14 @@
 A weather app built with HTML, CSS, and JavaScript. Search for any city, or let the app use your device's location, and instantly see the current weather. The background image changes to match the weather conditions.
  
 **🔗 Live demo:** https://weather-app-1pdq-git-main-syed-ahsan-s-projects.vercel.app
- 
+
+ Karachi Weather Showing Haze
 ![Weather App - Haze in Karachi](https://github.com/syedAhsan382/Weather-app/blob/77bb02fe4baee0a4ca93f01d7b02fa5bf2424462/Karachi%20weather.png)
+
+Chicago Weather Overcast Clouds
 ![Weather App - Overcast clouds in Chicago](https://github.com/syedAhsan382/Weather-app/blob/77bb02fe4baee0a4ca93f01d7b02fa5bf2424462/chicago%20weather.png)
+
+Error when the city name is misspelled or not existed
 ![Weather App - Error when the city name is mispelled or not existed](https://github.com/syedAhsan382/Weather-app/blob/77bb02fe4baee0a4ca93f01d7b02fa5bf2424462/city%20error.png)
 
  
